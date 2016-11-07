@@ -1,0 +1,37 @@
+﻿
+@model Michèle.Models.GoOnModel
+
+@{
+    ViewBag.Title = "Выполнить вход";
+}
+
+<div class="login" style="opacity: 0; min-height: 500px;">
+    @using (Html.BeginForm("Login", "Home", new { ReturnUrl = ViewBag.ReturnUrl }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Форма входа</legend>
+            @if (Model != null && Model.IsFailedAttempt == true)
+            {
+                <div class="message">Не угадали!</div>
+            }
+            <div class="textboxRow" width="250px">
+                @Html.TextBoxFor(m => m.UserName, new { placeholder = "Логин" })
+                @Html.ValidationMessageFor(m => m.UserName)
+            </div>
+            <div class="textboxRow" width="250px">
+                @Html.PasswordFor(m => m.Password, new { placeholder = "Пароль" })
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+            <input type="submit" value="Выполнить вход" width="260px" />
+        </fieldset>
+    }
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".login").animate({ opacity: '1' });
+    });
+</script>

@@ -1,0 +1,96 @@
+﻿@using Michèle.App_Code
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Marya Semyakova Portfolio</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="content/Site.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="content/style.css" />
+    <noscript>
+        <link rel="stylesheet" type="text/css" href="content/noscript.css" />
+    </noscript>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    
+</head>
+<body>
+    <div class="container-nav">
+
+
+        <div class="swipe-area">
+            <a href="#" id="sidebar-toggle" @*data-toggle="modal" data-target="#myModal"*@>
+                <img src="~/Content/images/logo.jpg" width="200" />
+                @* <p>@Resources.HomeRes.Menu</p>*@
+            </a>
+            <div class="dt">
+                <ul>
+                    <li>@Html.ActionLink(Resources.HomeRes.Home, "Index", "Home")</li>
+                    @* <li>@Html.ActionLink(Resources.HomeRes.Works, "AllWorks", "Home")</li>*@
+                    <li>@Html.ActionLink(Resources.HomeRes.About, "About", "Home")</li>
+                    <li>@Html.ActionLink(Resources.HomeRes.Contact, "Contact", "Home")</li>
+                    @* <li>@Html.ActionLink(Resources.HomeRes.Blogs, "Blogs", "Home")</li>*@
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink(Resources.HomeRes.Admin, "AdminIndex", "Home")</li>
+                    }
+                </ul>
+            </div>
+
+            <div class="language">
+                <ul>
+                    @Url.LangSwitcher("en", ViewContext.RouteData, "en")
+                    @Url.LangSwitcher("ru", ViewContext.RouteData, "ru")
+                </ul>
+            </div>
+
+            <div class="social-list">
+                <ul>
+
+                    <li><a href="#"><img src="~/Content/images/social/behance-logo.png" alt="behance" /></a></li>
+                    <li><a href="#"><img src="~/Content/images/social/pinterest.png" alt="pinterest" /></a></li>
+                    <li><a href="#"><img src="~/Content/images/social/VK.png" alt="VK" /></a></li>
+                </ul>
+            </div>
+        </div>
+       
+    </div>
+
+    @*<! ---------BODY-------- !>*@
+
+
+
+
+    <div class="content">
+
+        @RenderBody()
+
+
+        <footer>
+            
+            <span class="copyright">&copy;copyright @DateTime.Now.Year, Le portefeuille de Michèle</span>
+
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.eislideshow.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.easing.1.3.js"></script>
+    <script type="text/javascript">
+            $(function() {
+                $('#ei-slider').eislideshow({
+					animation			: 'center',
+					autoplay			: true,
+					slideshow_interval	: 3000,
+					titlesFactor		: 0
+                });
+            });
+    </script>
+</body>
+</html>

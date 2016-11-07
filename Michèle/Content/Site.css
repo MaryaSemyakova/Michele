@@ -1,0 +1,499 @@
+﻿/* Move down content because we have a fixed navbar that is 50px tall */
+
+
+html, body, ul, li, h1, h2, h3, h4, h5, h6, img, p{
+    font-family: 'High Tower Text Regular';
+    color: black;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+}
+
+/*body{
+    font-size:14px;
+    letter-spacing:0.2px;
+}
+h3 {
+    color: red;
+    font-size: 30px;
+    margin-top: 10px;
+    font-weight: normal;
+}*/
+
+
+.container-nav {
+    width: 100%;
+    left: 0px;
+    -webkit-transition:  left 0.4s ease-in-out;
+    -moz-transition:  left 0.4s ease-in-out;
+    -ms-transition:  left 0.4s ease-in-out;
+    -o-transition:  left 0.4s ease-in-out;
+    transition:  left 0.4s ease-in-out;
+}
+
+
+.swipe-area {
+    position: fixed;
+    display:block;
+    width: 200px;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    background: #fff;
+
+}
+.swipe-area .dt ul {
+    position:relative; 
+    margin:auto;
+    top:30vh;
+    list-style: none;
+    width:120px;
+    
+}
+.swipe-area .dt ul li {
+    position:relative;
+    height:50px;
+    border-bottom: 1px solid white;
+}
+.swipe-area .dt  ul li a {
+   padding-top:11px;
+    font-family: Georgia;
+    text-align:center;
+    font-size: 12pt;
+    font-weight: 100;
+    color: #0000ff;
+    text-decoration: none;
+    display: block;
+    height:100%;
+    width:100%;
+    -webkit-transition:  background 0.3s ease-in-out;
+    -moz-transition:  background 0.3s ease-in-out;
+    -ms-transition:  background 0.3s ease-in-out;
+    -o-transition:  background 0.3s ease-in-out;
+    transition:  background 0.3s ease-in-out;
+}
+
+.swipe-area .dt ul li:last-child {
+   border-bottom:none;
+}
+
+.swipe-area .dt ul li:hover a {
+    color: #dc143c;
+    /* ReSharper disable once CssNotResolved */
+    text-decoretion: none;
+}
+.swipe-area .language{
+    position: absolute;
+    bottom: 15vh;
+    width:100%;
+    
+}
+.swipe-area .language ul li:hover a {
+    color: #dc143c;
+    text-decoretion: none;
+} 
+
+.swipe-area .language ul li a{
+    color: #0000ff;
+    height:100%;
+    font-size:12pt;
+    padding-top:0;   
+    padding-left:20px;
+    padding-right:20px;    
+}
+
+.swipe-area .language ul li:first-child{
+    border-right: 1px solid white;}
+    
+.swipe-area .language ul li{
+    float:left;
+    height:25px;
+    border-bottom:none;
+    width:50%;
+    
+}
+.swipe-area .language ul{
+    width:120px;
+    margin:auto;
+    list-style: none;
+    position:relative;
+
+}
+
+.swipe-area .social-list{
+    position: absolute;
+    height:25px;
+    top: 90vh;
+    width:100%;
+    
+}
+.swipe-area .social-list ul li:hover a {
+    color: #a5f2de;
+} 
+
+.swipe-area .social-list ul li a{
+    color: white;
+    height:100%;
+    font-size:12pt;
+    padding-top:0;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+    
+.swipe-area .social-list ul li{
+    float:left;
+    height:25px;
+    border-bottom:none;
+    
+}
+.swipe-area .social-list ul{
+    margin:auto;
+    list-style: none;
+    width:140px;
+    
+}
+.swipe-area .social-list ul li a img{
+    width:20px; 
+    height:20px;
+
+}
+
+
+.content{
+    padding-left: 200px;
+    position:center; 
+}
+
+
+
+@media screen and (max-width: 830px) {
+    .swipe-area{
+        position: fixed;
+        z-index:0;
+        display: block;
+        width: 100%;
+        left: 0;
+        top: 0;
+        height: 60px;
+        background: #000;
+    }
+
+    .content{
+        padding-top:0px;
+    /*box-sizing: border-box;
+    -moz-box-sizing: border-box;*/
+    padding-left: 0px;
+    /*width: 100%;*/
+    position:center;
+
+ 
+}
+    #sidebar-toggle {
+        top: 0px;
+        z-index:999;
+    }
+    #sidebar-toggle img{
+        height:60px;
+        width:60px;
+    }
+    #sidebar {
+    position: fixed;
+    left: 0;
+    width: 100%;
+ 
+}
+    #sidebar-toggle p{
+        position:fixed;
+        top:20px;
+        left:50px;
+    }
+
+}
+
+.button-big {
+
+    box-sizing:border-box;
+    border: none;
+    font-family: "Georgia", sans-serif;
+    color: white;
+    font-size: 20px;
+    width:244px;
+    height:40px;
+}
+
+
+
+/*------------FOOTER-------------*/
+
+footer {
+    background-color: #f8f7f5;
+    color: #b7a496;
+    padding: 20px 0 60px 0;
+    position: relative;
+}
+
+footer h3{
+    /*color: #6b443f;
+    font-size: 30px;
+    font-weight: normal;
+    margin-top: 10px;*/
+    font-style: italic;
+    margin-bottom:30px;
+}
+
+.col-one-third {
+    width: 33%;
+    float: left;
+}
+
+
+footer address {
+
+    font-style: normal;
+    font-size:18px;
+}
+
+footer address a{
+    color: #9d9d9d;
+    text-decoration: none;
+    font-style: italic;
+    margin-top:-10px;
+}
+
+footer address a:hover{
+    text-decoration: underline;
+}
+
+footer .registration {
+    position:relative;
+    float:right;
+}
+
+footer .registration button {
+    background-color: #000;
+    margin-top:50px;
+    right:50px;
+}
+
+footer .registration button:hover{
+    color:#a5f2de;
+}
+
+footer .copyright {
+    width: 100%;
+    display: block;
+    color: #555;
+    text-align: center;
+    padding:15px;
+    position: absolute;
+    bottom: 0px;
+}
+
+/*-------WORK----------*/
+
+/*.tab-content{
+   float: left;
+}
+
+.nav-tabs{
+    float: left;
+}*/
+.left-nav-title{
+    font-weight:bold;
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+    font-family: "Georgia", sans-serif;
+}
+.left-nav-title:hover{
+    color: black;
+}
+
+.card span{display:none;}
+
+.card a:hover + .caption{display:block;}
+
+.col-md-3{
+    padding-bottom:2%;
+}
+
+.mytab{margin:10px;}
+
+
+/*--------------ABOUT-----------------*/
+.myphoto {
+   width:auto;
+    height:100vh;
+}
+.container-about {
+    padding:30px;
+}
+
+
+
+/*------------RESPONSIVE---------------*/
+
+@media (max-width: 899px){
+    .container {
+        padding: 0 10px;
+    }
+    .feature-list {
+        margin: 0 10px;
+        padding: 0;
+    }
+
+    .portfolio-list{
+        width:100%;
+    }
+
+    .portfolio-list li {
+        width: 25%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .portfolio-list li span{
+        width: 100%;
+    }
+       
+}
+
+@media (max-width: 640px) {
+    .myphoto {
+        width: 50vh;
+        height: auto;
+    }
+
+    .menu-icon {
+        display: block;
+        height: 100%;
+        width: auto;
+        cursor: pointer;
+    }
+
+    .nav-list {
+        display: none;
+        background-color: #aaa;
+        width: 100%;
+        padding: 10px;
+        position: relative;
+        left: -10px;
+        padding-bottom: 0;
+    }
+
+    .menu-icon:hover + .nav-list {
+        display: block;
+    }
+
+    .nav-list:hover {
+        display: block;
+    }
+
+    .social-list {
+        position: absolute;
+        top: 0px;
+        right: 10px;
+    }
+
+    .nav-list li {
+        display: block;
+        margin-bottom: 20px;
+        float: none;
+    }
+
+    .portfolio-list li {
+        float: none;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .feature-list {
+        background: none;
+        width: 100%;
+        margin: 0;
+        height: auto;
+    }
+
+        .feature-list li {
+            background-image: url('../images/feature-bg.jpg');
+            float: none;
+            height: 120px;
+            border-right: none !important;
+            border-left: none;
+            border-bottom: 1px solid white;
+            width: 100%;
+            text-align: left;
+            padding: 0;
+        }
+
+    .feature-icon {
+        float: left;
+        margin: 28px 20px 0 10px;
+    }
+
+    .feature-title {
+        line-height: 120px;
+    }
+
+    .feature-fasion {
+        background-position: top left;
+    }
+
+    .feature-graphic {
+        background-position: bottom center;
+    }
+
+    .feature-students {
+        background-position: center right;
+    }
+
+    .col-one-third {
+        display: block;
+        width: 100%;
+        margin: 20px 0px 20px 0px;
+    }
+
+    footer .registration {
+        float: left;
+    }
+
+        footer .registration button {
+            width: 100%;
+            margin: 0;
+        }
+
+    footer .copyright {
+        padding-bottom: 10px;
+        margin-left: -20px;
+    }
+
+    .myphoto {
+        margin-top:-100px;
+        width:100%;
+        height:auto;
+      
+    }
+
+    .text-about{
+        margin-top:30px;
+        display:block;
+        width:100%;
+
+    }
+    
+}
+@media screen and (max-width: 830px){
+    .container-about {
+    padding-top:90px;
+    padding-right:30px;
+    padding-left:30px;
+}
+    .photo{height:50vh;
+           width:100%;
+           overflow:hidden;
+           
+    }
+    
+    
+}
