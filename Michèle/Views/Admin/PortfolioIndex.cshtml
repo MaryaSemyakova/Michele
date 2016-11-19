@@ -1,0 +1,43 @@
+﻿
+<h2>PortfolioIndex</h2>
+
+@model PagedList.IPagedList<Michèle.Models.Work>
+
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "PortfolioIndex";
+}
+
+<h2>Students</h2>
+
+<p>
+    @Html.ActionLink("Create New", "PortfolioCreate")
+</p>
+
+
+
+   <ul class="portfolioList">
+    @foreach (Michèle.Models.Work m in Model)
+            {
+        <li class="modelsListItem shadowEffect  @(m.IsActivate ? "activate" : "deactivate")" model-id="@m.WorkID">
+            <img src="@Url.Action("ReturnImage", "Home", new { path = m.MainPhoto, isMainPhoto = true })" alt="" />
+            @*<p class="name">@Html.DisplayFor(modelItem => m.WorkLangs.WorkName)</p>*@
+            <div class="deleteButton entypo-cancel"></div>
+            @Html.ActionLink("Просмотр", "PortfolioDetailes", "Home", new { id = m.WorkID }, null)
+            <a class="change">Редактировать</a>
+            <div class="activateButton">@(m.IsActivate ? "Не показывать" : "Отображать")</div>
+        </li>
+    }
+</ul>
+
+
+
+
+
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

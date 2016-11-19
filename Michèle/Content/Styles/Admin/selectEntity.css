@@ -1,0 +1,32 @@
+﻿.selectEntity {
+    position: relative;
+    margin-top: 20px;
+    height: 80vh;
+    width: 100%;
+}
+.selectEntity div {
+    height: 100%;
+}
+
+#adminPortfolio {
+    background: url(../../img/admin/portfolio.jpeg) no-repeat center bottom;
+}
+
+#adminCategory {
+    background: url(../../img/admin/category.jpeg) no-repeat center bottom;
+}
+
+#adminLanguage {
+    background:url("../../img/admin/language.jpeg")  no-repeat center bottom;
+}
+
+.selectEntity div a {
+    position: relative;
+    top: 50%;
+    left: 30%;
+    right: 50%;
+    font-size: 20px;
+    color: azure;
+    font-weight: bold;
+
+}

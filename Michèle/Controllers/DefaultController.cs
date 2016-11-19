@@ -11,6 +11,7 @@ namespace Michèle.Controllers
         public string CurrentLangCode { get; protected set; }
 
 
+
         protected override void Initialize(System.Web.Routing.RequestContext requestContext)
         {
             if (requestContext.HttpContext.Request.Url != null)

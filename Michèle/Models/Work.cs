@@ -10,8 +10,10 @@ namespace Michèle.Models
         public int WorkID { get; set; }
         public string MainPhoto { get; set; }       
         public int[] CategoryID { get; set; }
+        public bool IsActivate { get; set; }
         public virtual ICollection<Photo> Photos { get; set; }
         public virtual Slider Slider { get; set; }
+        public virtual ICollection<WorkLang> WorkLangs { get; set; }
 
     }
 }

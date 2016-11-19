@@ -94,6 +94,14 @@
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -160,11 +168,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Migrations\201611071626164_DatabaseContext.cs" />
     <Compile Include="Migrations\201611071626164_DatabaseContext.Designer.cs">
       <DependentUpon>201611071626164_DatabaseContext.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Resources\AdminRes.en.Designer.cs">
+      <DependentUpon>AdminRes.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\AdminRes.Designer.cs">
+      <DependentUpon>AdminRes.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Resources\HomeRes.en.Designer.cs">
       <DependentUpon>HomeRes.en.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -213,6 +232,15 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\admin\category.jpeg" />
+    <Content Include="Content\img\admin\language.jpeg" />
+    <Content Include="Content\img\admin\portfolio.jpeg" />
+    <Content Include="Content\img\logo.jpg" />
+    <Content Include="Content\img\social\behance-logo.png" />
+    <Content Include="Content\img\social\pinterest.png" />
+    <Content Include="Content\img\social\VK.png" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\Styles\Admin\selectEntity.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -263,6 +291,8 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\PortfolioIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -273,6 +303,16 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201611071626164_DatabaseContext.resx">
       <DependentUpon>201611071626164_DatabaseContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AdminRes.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AdminRes.en.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AdminRes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AdminRes.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\HomeRes.en.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -287,6 +327,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\uploads\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

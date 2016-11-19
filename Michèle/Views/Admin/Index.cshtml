@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = Resources.AdminRes.AdminPage;
+}
+
+
+<h2></h2>
+
+<link href="~/Content/Styles/Admin/selectEntity.css" rel="stylesheet">
+
+<div class="row selectEntity">
+    <div class="col-md-4" id="adminPortfolio">@Html.ActionLink(Resources.AdminRes.Portfolio, "PortfolioIndex", "Admin")</div>
+    <div class="col-md-4" id="adminCategory">@Html.ActionLink(Resources.AdminRes.Category, "CategoryIndex", "Admin")</div>
+    <div class="col-md-4" id="adminLanguage">@Html.ActionLink(Resources.AdminRes.Language, "LanguageIndex", "Admin")</div>
+</div>

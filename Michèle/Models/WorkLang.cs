@@ -12,7 +12,6 @@ namespace Michèle.Models
         public string WorkName { get; set; }
         public string Describe { get; set; }
         public int LanguageID { get; set; }
-
         public Language Language { get; set; }
     }
 }

@@ -8,12 +8,8 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link href="content/Site.css" rel="stylesheet" type="text/css">
+    <link href="Content/Site.css" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" type="text/css" href="content/style.css" />
-    <noscript>
-        <link rel="stylesheet" type="text/css" href="content/noscript.css" />
-    </noscript>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
     
 </head>
@@ -23,7 +19,7 @@
 
         <div class="swipe-area">
             <a href="#" id="sidebar-toggle" @*data-toggle="modal" data-target="#myModal"*@>
-                <img src="~/Content/images/logo.jpg" width="200" />
+                <img src="~/Content/img/logo.jpg" width="200" />
                 @* <p>@Resources.HomeRes.Menu</p>*@
             </a>
             <div class="dt">
@@ -35,7 +31,7 @@
                     @* <li>@Html.ActionLink(Resources.HomeRes.Blogs, "Blogs", "Home")</li>*@
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink(Resources.HomeRes.Admin, "AdminIndex", "Home")</li>
+                        <li>@Html.ActionLink(Resources.HomeRes.Admin, "Index", "Admin")</li>
                     }
                 </ul>
             </div>
@@ -50,9 +46,9 @@
             <div class="social-list">
                 <ul>
 
-                    <li><a href="#"><img src="~/Content/images/social/behance-logo.png" alt="behance" /></a></li>
-                    <li><a href="#"><img src="~/Content/images/social/pinterest.png" alt="pinterest" /></a></li>
-                    <li><a href="#"><img src="~/Content/images/social/VK.png" alt="VK" /></a></li>
+                    <li><a href="#"><img src="~/Content/img/social/behance-logo.png" alt="behance" /></a></li>
+                    <li><a href="#"><img src="~/Content/img/social/pinterest.png" alt="pinterest" /></a></li>
+                    <li><a href="#"><img src="~/Content/img/social/VK.png" alt="VK" /></a></li>
                 </ul>
             </div>
         </div>
